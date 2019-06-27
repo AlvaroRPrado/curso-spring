@@ -24,7 +24,7 @@ import com.algaworks.brewer.repository.Cervejas;
 @EnableTransactionManagement
 public class JPAConfig {
 	
-	@Bean
+@Bean
 	public DataSource dataSource() {
 		JndiDataSourceLookup dataSourceLookup = new JndiDataSourceLookup();
 		dataSourceLookup.setResourceRef(true);

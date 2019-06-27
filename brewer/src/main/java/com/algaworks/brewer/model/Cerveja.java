@@ -42,7 +42,7 @@ public class Cerveja {
 	private String descricao;
 	
 	@NotNull(message = "O valor é obrigatório")
-	@DecimalMin(value = "50", message = "O valor da cerveja deve ser maior que R$0,50")
+	@DecimalMin(value = "0.5", message = "O valor da cerveja deve ser maior que R$0,50")
 	@DecimalMax(value = "9999999.99", message ="O valor de cerveja deve ser menor que R$ 9.999.999.99")
 	private BigDecimal valor;
 
@@ -75,6 +75,11 @@ public class Cerveja {
 	@JoinColumn(name = "codigo_estilo")
 	@NotNull(message = "O estilo é obrigatório")
 	private Estilo estilo;
+	
+	private String foto;
+	
+	@Column(name="content_type")
+	private String contentType;
 	
 	@PrePersist @PreUpdate
 	private void prePersistUpdate(){
@@ -168,6 +173,22 @@ public class Cerveja {
 
 	public void setEstilo(Estilo estilo) {
 		this.estilo = estilo;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getContentType() {
+		return contentType;
+	}
+
+	public void setContentType(String contentType) {
+		this.contentType = contentType;
 	}
 
 	@Override

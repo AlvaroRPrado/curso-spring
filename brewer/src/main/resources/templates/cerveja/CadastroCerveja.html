@@ -33,7 +33,7 @@
 	
 			<div class="row">
 				<div class="col-sm-2  form-group" brewer:classforerror ="sku">
-					<label for="sku" class="control-label">SKU</label>
+					<label for="sku" class="control-label">SKU codigo</label>
 					<input id="sku" type="text" class="form-control" th:field="*{sku}"/>
 				</div>
 				
@@ -111,14 +111,17 @@
 					</div>
 				</div>
 				
-				<div class="col-sm-3  form-group" brewer:classforerror ="quantidadeEstoque">
+			<div class="col-sm-3  form-group" brewer:classforerror ="quantidadeEstoque">
 					<label for="quantidadeEstoque" class="control-label">Estoque</label>
 					<input id="estoque" type="text" class="form-control  js-plain" th:field="*{quantidadeEstoque}"/>
 				</div>
 			</div>
 			
-			<div class="row">
+		<div class="row">
 				<div class="form-group  col-sm-12">
+				<input type="hidden" th:field="*{foto}">
+					<input type="hidden" th:field="*{contentType}">
+				
 					<label class="control-label">Foto</label>
 					
 					<div id="upload-drop" class="bw-upload">
@@ -143,14 +146,19 @@
 	<script th:src="@{/javascripts/estilo.cadastro-rapido.js}"></script>
 	
 	<script th:src="@{/javascripts/vendors/uikit.min.js}"></script>
-	<script th:src="@{/javascripts/vendors/uikit-icons.min.js}"></script>
+	<script th:src="@{/javascripts/vendors/upload.min.js}"></script>
 	
 	<script>
 	$(function() {
 		var settings = {
 				type: 'json',
 				filelimit: 1,
-				allow: '*.(jpg|jpeg|png)'
+				allow: '*.(jpg|jpeg|png)',
+				action: '/brewer/fotos',
+					complete: function(resposta) {
+						$('input[name=foto]').val(resposta.nome);
+						$('input[name=contentType]').val(resposta.contentType);
+					}
 		};
 		
 		UIkit.uploadSelect($('#upload-select'), settings);
