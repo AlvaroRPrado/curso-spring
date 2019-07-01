@@ -1,4 +1,3 @@
-    
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml" 
 	xmlns:th="http://www.thymeleaf.org"
@@ -29,7 +28,7 @@
 			<brewer:message/>
 	
 			<div class="row">
-				<div class="col-sm-2  form-group" brewer:classforerror="sku">
+				<div class="col-sm-2  form-group" brewer:classforerror ="sku">
 					<label for="sku" class="control-label">SKU</label>
 					<input id="sku" type="text" class="form-control" th:field="*{sku}"/>
 				</div>
@@ -150,5 +149,6 @@
 	<script th:src="@{/javascripts/cerveja.upload-foto.js}"></script>
 	
 </th:block>
+	
 </body>
 </html>

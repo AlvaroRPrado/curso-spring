@@ -1,4 +1,4 @@
-package com.algaworks.brewer.validetion;
+package com.algaworks.brewer.validation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
