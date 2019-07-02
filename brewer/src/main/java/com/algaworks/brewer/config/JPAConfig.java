@@ -4,7 +4,6 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
@@ -18,13 +17,13 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.algaworks.brewer.model.Cerveja;
 import com.algaworks.brewer.repository.Cervejas;
+
 @Configuration
 @EnableJpaRepositories(basePackageClasses = Cervejas.class, enableDefaultTransactions = false)
-@ComponentScan(basePackageClasses = Cervejas.class)
 @EnableTransactionManagement
 public class JPAConfig {
-	
-@Bean
+
+	@Bean
 	public DataSource dataSource() {
 		JndiDataSourceLookup dataSourceLookup = new JndiDataSourceLookup();
 		dataSourceLookup.setResourceRef(true);
@@ -51,12 +50,13 @@ public class JPAConfig {
 		return factory.getObject();
 	}
 	
-@Bean
-public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-	JpaTransactionManager transactionManager = new JpaTransactionManager();
-	transactionManager.setEntityManagerFactory(entityManagerFactory);
-	return transactionManager;
+	@Bean
+	public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
+		JpaTransactionManager transactionManager = new JpaTransactionManager();
+		transactionManager.setEntityManagerFactory(entityManagerFactory);
+		return transactionManager;
+	}
+	
 }
 
-}
 
