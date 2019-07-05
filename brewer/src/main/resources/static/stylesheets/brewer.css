@@ -7,7 +7,7 @@
 	font-size: 18px;
 }
 
-.bw-required > .control-label:after {
+.bw-required > .control-label:after{
 	content: "*";
 }
 
@@ -81,7 +81,7 @@
 */
 
 /* Colunas - Pesquisa de Cervejas */
-.table-cervejas-col-foto {
+.table-cervejas-col-foto; {
 	min-width: 50px;
 	width: 50px
 }
