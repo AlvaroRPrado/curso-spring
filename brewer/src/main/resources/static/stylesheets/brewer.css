@@ -74,16 +74,15 @@
     vertical-align: middle;
 }
 
-/*
 ###################
 # PÁGINAS DO SISTEMA
 ###################
 */
 
 /* Colunas - Pesquisa de Cervejas */
-.table-cervejas-col-foto; {
-	min-width: 30px;
-	width: 30px
+.table-cervejas-col-foto {
+	min-width: 50px;
+	width: 50px
 }
 
 .table-cervejas-col-sku {
