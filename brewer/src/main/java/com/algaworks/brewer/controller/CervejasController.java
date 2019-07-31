@@ -19,7 +19,6 @@ import com.algaworks.brewer.model.Cerveja;
 import com.algaworks.brewer.model.Origem;
 import com.algaworks.brewer.model.Sabor;
 import com.algaworks.brewer.repository.Cervejas;
-import com.algaworks.brewer.repository.Estados;
 import com.algaworks.brewer.repository.Estilos;
 import com.algaworks.brewer.repository.filter.CervejaFilter;
 import com.algaworks.brewer.service.CadastroCervejaService;
