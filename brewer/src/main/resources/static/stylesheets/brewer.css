@@ -74,15 +74,21 @@
     vertical-align: middle;
 }
 
+/*
 ###################
 # PÁGINAS DO SISTEMA
 ###################
 */
 
+/* Colunas comuns */
+.table-col-acoes {
+	width: 80px;
+}
+
 /* Colunas - Pesquisa de Cervejas */
 .table-cervejas-col-foto {
-	min-width: 70px;
-	width: 70px
+	min-width: 50px;
+	width: 50px
 }
 
 .table-cervejas-col-sku {
@@ -99,14 +105,44 @@
 }
 
 .table-cervejas-col-origem {
-	width: 120px;
+	width: 100px;
 }
 
 .table-cervejas-col-valor {
-	width: 120px;
+	width: 100px;
 	text-align: right;
 }
 
 .table-cervejas-col-acoes {
 	width: 80px;
+}
+
+/* Colunas - Pesquisa de Estilos */
+.table-estilos-col-codigo {
+	width: 80px;
+}
+
+/* Colunas - Pesquisa de Clientes */
+.table-clientes-col-nome {
+	
+}
+
+.table-clientes-col-tipo-pessoa {
+	width: 120px;
+	text-align: center;
+}
+
+.table-clientes-col-cpf-cnpj {
+	width: 140px;
+	text-align: right;
+}
+
+.table-clientes-col-telefone {
+	width: 140px;
+	text-align: right;
+}
+
+.table-clientes-col-cidade-estado {
+	width: 140px;
+	text-align: right;
 }
