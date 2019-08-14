@@ -125,6 +125,10 @@ public class Usuario implements Serializable {
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
 	}
+	
+	public boolean isNovo() {//verificando se o usuario e novo
+		return codigo == null;
+	}
 
 	@Override
 	public int hashCode() {
