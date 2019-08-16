@@ -14,7 +14,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
@@ -57,7 +56,7 @@ public class Usuario implements Serializable {
 				, inverseJoinColumns = @JoinColumn(name = "codigo_grupo"))	
 	private List<Grupo> grupos;
 
-	@NotNull(message = "Data de nascimento é obrigatório")
+	
 	@Column(name = "data_nascimento")
 	private LocalDate dataNascimento;
 
