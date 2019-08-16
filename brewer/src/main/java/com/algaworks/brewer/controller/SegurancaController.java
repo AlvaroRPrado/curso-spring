@@ -1,4 +1,4 @@
-package com.algaworks.brewer.controller.converter;
+package com.algaworks.brewer.controller;
 
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -15,6 +15,11 @@ public class SegurancaController {
 		}
 		
 		return "Login";
+	}
+	
+	@GetMapping("/403")
+	public String acessoNegado() {
+		return "403";
 	}
 	
 }

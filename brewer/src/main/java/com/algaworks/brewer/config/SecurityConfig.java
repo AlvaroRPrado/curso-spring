@@ -46,7 +46,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 						.loginPage("/login")
 						.permitAll()
 						.and()
-			.csrf().disable();
+						.exceptionHandling()
+							.accessDeniedPage("/403")
+							.and()
+						.csrf().disable();
 	}
 	
 	@Bean
