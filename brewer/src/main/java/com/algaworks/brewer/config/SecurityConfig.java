@@ -51,7 +51,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 						.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
 						.and()
 						.exceptionHandling()
-							.accessDeniedPage("/403");
+							.accessDeniedPage("/403")
+							.and()
+							.sessionManagement()
+								.invalidSessionUrl("/login")
+		/*
+		 * .and() .sessionManagement() .maximumSessions(1)// maximo de pagina
+		 * logada .expiredUrl("/login")
+		 */
+							;
+		
 					
 	}
 	
