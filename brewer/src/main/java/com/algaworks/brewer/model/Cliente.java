@@ -25,6 +25,7 @@ import org.hibernate.validator.group.GroupSequenceProvider;
 import com.algaworks.brewer.model.validation.ClienteGroupSequenceProvider;
 import com.algaworks.brewer.model.validation.CnpjGroup;
 import com.algaworks.brewer.model.validation.CpfGroup;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "cliente")
@@ -57,6 +58,7 @@ public class Cliente implements Serializable {
 	private String email;
 
 	@Embedded
+	@JsonIgnore
 	private Endereco endereco;
 	
 	@PrePersist @PreUpdate
