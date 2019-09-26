@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.algaworks.brewer.session.TabelaItensVenda;
+
 public class TabelaItensVendaTest {
 
 	private TabelaItensVenda tabelaItensVenda;
