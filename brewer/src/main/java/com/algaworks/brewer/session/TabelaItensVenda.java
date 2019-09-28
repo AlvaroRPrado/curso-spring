@@ -36,5 +36,9 @@ public class TabelaItensVenda {
 		return itens.size();
 	}
 
+	public Object getItens() {
+		return itens;
+	}
+
 	
 }
