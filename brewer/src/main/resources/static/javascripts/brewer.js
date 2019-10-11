@@ -2,18 +2,18 @@ var Brewer = Brewer || {};
 
 Brewer.MaskMoney = (function() {
 	
-function MaskMoney() {
-	this.decimal = $('.js-decimal');
-	this.plain = $('.js-plain');
-}
-
-MaskMoney.prototype.enable = function() {
-	this.decimal.maskMoney({ decimal: ',', thousands: '.' });
-	this.plain.maskMoney({ precision: 0, thousands: '.' });
-}
-
-return MaskMoney;
-
+	function MaskMoney() {
+		this.decimal = $('.js-decimal');
+		this.plain = $('.js-plain');
+	}
+	
+	MaskMoney.prototype.enable = function() {
+		this.decimal.maskMoney({ decimal: ',', thousands: '.' });
+		this.plain.maskMoney({ precision: 0, thousands: '.' });
+	}
+	
+	return MaskMoney;
+	
 }());
 
 Brewer.MaskPhoneNumber = (function() {
@@ -90,19 +90,15 @@ Brewer.Security = (function() {
 	
 }());
 
+numeral.language('pt-br');
 
-//numeral.language('pt-br');
-numeral.locale('pt-br');
 Brewer.formatarMoeda = function(valor) {
 	return numeral(valor).format('0,0.00');
 }
 
 Brewer.recuperarValor = function(valorFormatado) {
-	return numeral(valorFormatado).value();
+	return numeral().unformat(valorFormatado);
 }
-/*Brewer.recuperarValor = function(valorFormatado) {
-	return numeral().unformat(valorFormatado).value();
-}*/
 
 $(function() {
 	var maskMoney = new Brewer.MaskMoney();
@@ -119,4 +115,5 @@ $(function() {
 	
 	var security = new Brewer.Security();
 	security.enable();
+	
 });
