@@ -19,7 +19,7 @@ public class PageWrapper<T> {
 		//this.uriBuilder = ServletUriComponentsBuilder.fromRequest(httpServletRequest); com bug do espaço
 		String httpUrl = httpServletRequest.getRequestURL().append(
 				httpServletRequest.getQueryString() != null ? "?" + httpServletRequest.getQueryString() : "")
-				.toString().replaceAll("\\+", "%20");
+				.toString().replaceAll("\\+", "%20").replace("excluido","");
 		this.uriBuilder = UriComponentsBuilder.fromHttpUrl(httpUrl);
 	}
 	
