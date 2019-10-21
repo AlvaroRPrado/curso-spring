@@ -44,7 +44,7 @@ public class Usuario implements Serializable {
 	private String email;
 
 	
-	@NotBlank(message = "Crie uma senha")
+
 	private String senha;
 
 	private Boolean ativo;
