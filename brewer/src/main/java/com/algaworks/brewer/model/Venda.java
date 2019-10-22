@@ -58,8 +58,8 @@ public class Venda {
 	@Enumerated(EnumType.STRING)
 	private StatusVenda status = StatusVenda.ORCAMENTO;
 
-	@OneToMany(mappedBy = "venda", cascade = CascadeType.ALL)
-	private List<ItemVenda> itens = new ArrayList<>();
+	@OneToMany(mappedBy = "venda", cascade = CascadeType.ALL, orphanRemoval = true)//orphanRemoval = true remove 
+	private List<ItemVenda> itens = new ArrayList<>();																		//as entidade morta
 
 	@Transient
 	private String uuid;

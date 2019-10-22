@@ -50,7 +50,8 @@ public class UsuariosController {
 	}
 	
 	@PostMapping({ "/novo", "{\\+d}" })
-	public ModelAndView salvar(@Valid Usuario usuario, BindingResult result, RedirectAttributes attributes) {
+	public ModelAndView salvar(@Valid Usuario usuario, 
+			BindingResult result, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
 			return novo(usuario);
 		}
