@@ -15,6 +15,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -53,7 +54,7 @@ public class ClientesController {
 	}
 	
 	
-	@PostMapping("/novo")
+	@PostMapping({ "/novo", "{\\+d}" })
 	public ModelAndView salvar(@Valid Cliente cliente, BindingResult result, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
 			return novo(cliente);
@@ -88,6 +89,14 @@ public class ClientesController {
 		return clientes.findByNomeStartingWithIgnoreCase(nome);
 	}
 
+	@GetMapping("/{codigo}")
+	public ModelAndView editar(@PathVariable ("codigo")Cliente cliente) {
+		
+		ModelAndView mv = novo(cliente);
+		mv.addObject(cliente);
+		return mv;
+	}
+	
 	private void validarTamanhoNome(String nome) {
 		if (StringUtils.isEmpty(nome) || nome.length() < 3) {
 			throw new IllegalArgumentException();

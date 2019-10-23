@@ -61,6 +61,8 @@ public class Cliente implements Serializable {
 	@JsonIgnore
 	private Endereco endereco;
 	
+	//private String novo;
+	
 	@PrePersist @PreUpdate
 	private void prePersistPreUpdate() {
 		this.cpfOuCnpj = TipoPessoa.removerFormatacao(this.cpfOuCnpj);
@@ -129,6 +131,10 @@ public class Cliente implements Serializable {
 	public String getCpfOuCnpjSemFormatacao() {
 		return TipoPessoa.removerFormatacao(this.cpfOuCnpj);
 	}
+	public boolean isNovo() {
+		return codigo == null;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
